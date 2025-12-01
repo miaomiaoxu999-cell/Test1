@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第0天 - 复习环节 | 300天日语学习计划</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🎌 日语学习计划</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="calendar.html">课程日历</a>
+                <a href="stats.html">学习统计</a>
+                <a href="settings.html">设置</a>
+            </nav>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 移动端侧边菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav>
+            <a href="index.html">首页</a>
+            <a href="calendar.html">课程日历</a>
+            <a href="stats.html">学习统计</a>
+            <a href="settings.html">设置</a>
+        </nav>
+    </div>
+
+    <!-- 课程标题 -->
+    <section class="lesson-header-section">
+        <div class="container">
+            <div class="lesson-navigation">
+                <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回首页</a>
+                <span class="lesson-number">第0天</span>
+                <a href="day_1.html" class="next-link">下一天 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <h2>📝 第0天：复习环节</h2>
+            <p class="lesson-description">准备好了吗？让我们通过一些基础问题来回顾一下日语的基础知识！</p>
+        </div>
+    </section>
+
+    <!-- 主要内容 -->
+    <main class="lesson-content">
+        <div class="container">
+            <!-- 开场 -->
+            <section class="lesson-intro">
+                <div class="character-box">
+                    <div class="character-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="character-dialogue">
+                        <p>👋 各位同学好！欢迎来到300天日语学习计划的预热环节！</p>
+                        <p>在开始正式的学习之前，让我们先通过一些简单的问题来测试一下大家的日语基础，并同时复习一下必备的知识点！</p>
+                        <p>别担心，即使你是完全的零基础，这些问题也会帮助你建立学习日语的信心！💪</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 基础假名复习 -->
+            <section class="lesson-section">
+                <h3><i class="fas fa-book-open"></i> 基础假名复习</h3>
+                <div class="quiz-container">
+                    <h4>📝 选择题</h4>
+                    
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <span class="question-number">1.</span>
+                            <p>「こんにちは」的意思是什么？</p>
+                        </div>
+                        <div class="quiz-options">
+                            <label class="option"><input type="radio" name="q1" value="A"> A. 再见</label>
+                            <label class="option"><input type="radio" name="q1" value="B"> B. 你好</label>
+                            <label class="option"><input type="radio" name="q1" value="C"> C. 谢谢</label>
+                            <label class="option"><input type="radio" name="q1" value="D"> D. 对不起</label>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-q1"></div>
+                    </div>
+
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <span class="question-number">2.</span>
+                            <p>「ありがとう」的意思是什么？</p>
+                        </div>
+                        <div class="quiz-options">
+                            <label class="option"><input type="radio" name="q2" value="A"> A. 对不起</label>
+                            <label class="option"><input type="radio" name="q2" value="B"> B. 你好</label>
+                            <label class="option"><input type="radio" name="q2" value="C"> C. 谢谢</label>
+                            <label class="option"><input type="radio" name="q2" value="D"> D. 再见</label>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-q2"></div>
+                    </div>
+
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <span class="question-number">3.</span>
+                            <p>「さようなら」的意思是什么？</p>
+                        </div>
+                        <div class="quiz-options">
+                            <label class="option"><input type="radio" name="q3" value="A"> A. 早上好</label>
+                            <label class="option"><input type="radio" name="q3" value="B"> B. 晚上好</label>
+                            <label class="option"><input type="radio" name="q3" value="C"> C. 谢谢</label>
+                            <label class="option"><input type="radio" name="q3" value="D"> D. 再见</label>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-q3"></div>
+                    </div>
+
+                    <div class="quiz-controls">
+                        <button class="btn-secondary" onclick="checkAnswers()">检查答案</button>
+                        <button class="btn-secondary" onclick="resetQuiz()">重置</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 填空题 -->
+            <section class="lesson-section">
+                <h3><i class="fas fa-pen-fancy"></i> 填空题</h3>
+                <div class="quiz-container">
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <span class="question-number">4.</span>
+                            <p>日语的问候语「おはようございます」是在什么时间使用的？</p>
+                            <input type="text" id="q4" class="fill-blank" placeholder="请输入答案...">
+                        </div>
+                        <div class="quiz-feedback" id="feedback-q4"></div>
+                    </div>
+
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <span class="question-number">5.</span>
+                            <p>日语中有几个平假名？</p>
+                            <input type="text" id="q5" class="fill-blank" placeholder="请输入答案...">
+                        </div>
+                        <div class="quiz-feedback" id="feedback-q5"></div>
+                    </div>
+
+                    <div class="quiz-controls">
+                        <button class="btn-secondary" onclick="checkFillBlanks()">检查答案</button>
+                        <button class="btn-secondary" onclick="resetFillBlanks()">重置</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 翻译题 -->
+            <section class="lesson-section">
+                <h3><i class="fas fa-language"></i> 翻译题</h3>
+                <div class="quiz-container">
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <span class="question-number">6.</span>
+                            <p>请将「你好吗？」翻译成日语：</p>
+                            <input type="text" id="q6" class="fill-blank" placeholder="请输入日语翻译...">
+                        </div>
+                        <div class="quiz-feedback" id="feedback-q6"></div>
+                    </div>
+
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <span class="question-number">7.</span>
+                            <p>请将「晚安」翻译成日语：</p>
+                            <input type="text" id="q7" class="fill-blank" placeholder="请输入日语翻译...">
+                        </div>
+                        <div class="quiz-feedback" id="feedback-q7"></div>
+                    </div>
+
+                    <div class="quiz-controls">
+                        <button class="btn-secondary" onclick="checkTranslations()">检查答案</button>
+                        <button class="btn-secondary" onclick="resetTranslations()">重置</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 判断题 -->
+            <section class="lesson-section">
+                <h3><i class="fas fa-question-circle"></i> 判断题</h3>
+                <div class="quiz-container">
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <span class="question-number">8.</span>
+                            <p>日语中「は」在作为提示助词时发音为「わ」？</p>
+                        </div>
+                        <div class="quiz-options">
+                            <label class="option"><input type="radio" name="q8" value="true"> ✓ 正确</label>
+                            <label class="option"><input type="radio" name="q8" value="false"> ✗ 错误</label>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-q8"></div>
+                    </div>
+
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <span class="question-number">9.</span>
+                            <p>日语中的「こんばんは」只能在晚上说？</p>
+                        </div>
+                        <div class="quiz-options">
+                            <label class="option"><input type="radio" name="q9" value="true"> ✓ 正确</label>
+                            <label class="option"><input type="radio" name="q9" value="false"> ✗ 错误</label>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-q9"></div>
+                    </div>
+
+                    <div class="quiz-controls">
+                        <button class="btn-secondary" onclick="checkTrueFalse()">检查答案</button>
+                        <button class="btn-secondary" onclick="resetTrueFalse()">重置</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 答案解析 -->
+            <section class="lesson-section" id="answer-section">
+                <h3><i class="fas fa-lightbulb"></i> 答案解析</h3>
+                <div class="answer-container">
+                    <div class="answer-item">
+                        <h4>1. 选择题答案：</h4>
+                        <ul>
+                            <li>1. B. 你好 - 「こんにちは」是白天使用的问候语</li>
+                            <li>2. C. 谢谢 - 「ありがとう」表示感谢</li>
+                            <li>3. D. 再见 - 「さようなら」是正式的告别用语</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="answer-item">
+                        <h4>2. 填空题答案：</h4>
+                        <ul>
+                            <li>4. 早上/上午 - 「おはようございます」是早上使用的问候语</li>
+                            <li>5. 46 - 日语中有46个平假名（不包括拗音）</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="answer-item">
+                        <h4>3. 翻译题答案：</h4>
+                        <ul>
+                            <li>6. お元気ですか？ (Ogenki desu ka?)</li>
+                            <li>7. おやすみなさい (Oyasuminasai)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="answer-item">
+                        <h4>4. 判断题答案：</h4>
+                        <ul>
+                            <li>8. ✓ 正确 - 「は」作为提示助词时发音为「わ」</li>
+                            <li>9. ✓ 正确 - 「こんばんは」通常在晚上使用</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 学习提示 -->
+            <section class="lesson-section">
+                <div class="tips-box">
+                    <h4><i class="fas fa-info-circle"></i> 学习提示</h4>
+                    <p>✅ 这些基础问候语是日语学习的第一步，建议每天花5分钟进行复习和练习！</p>
+                    <p>✅ 日语的假名系统（平假名和片假名）是学习日语的基础，接下来的课程中我们会深入学习！</p>
+                    <p>✅ 别担心发音不标准，多听多练是关键！</p>
+                    <div class="next-lesson">
+                        <a href="day_1.html" class="btn-primary">继续学习第1天 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>300天日语学习计划</h4>
+                    <p>每天15-20分钟，让你笑着把日语学会！</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">使用指南</a>
+                    <a href="#">常见问题</a>
+                    <a href="#">联系我们</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 日语学习计划. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>

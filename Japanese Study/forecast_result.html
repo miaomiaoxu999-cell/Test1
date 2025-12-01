@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预测结果 - 加油站销量预测系统</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/forecast_style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="forecast_index.html">
+                <i class="fas fa-chart-line"></i> 加油站销量预测系统
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="forecast_index.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="forecast_input.html">数据输入</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="forecast_result.html">预测结果</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="forecast_history.html">历史记录</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="forecast_settings.html">设置</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <section class="results-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-primary text-white">
+                                <h2 class="h4 mb-0">
+                                    <i class="fas fa-chart-bar"></i> 预测结果
+                                </h2>
+                            </div>
+                            <div class="card-body">
+                                <!-- 预测摘要 -->
+                                <div class="result-card">
+                                    <h3>
+                                        <i class="fas fa-info-circle"></i> 预测摘要
+                                    </h3>
+                                    <div class="row g-3">
+                                        <div class="col-md-4">
+                                            <div class="stat-card text-center">
+                                                <div class="stat-value">12,500</div>
+                                                <div class="stat-label">平均日销量预测（升）</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="stat-card text-center">
+                                                <div class="stat-value">375,000</div>
+                                                <div class="stat-label">月总销量预测（升）</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="stat-card text-center">
+                                                <div class="stat-value">95%</div>
+                                                <div class="stat-label">置信水平</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h4 class="h6 mb-3">预测信息</h4>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <p><strong>加油站名称：</strong>示例加油站</p>
+                                                <p><strong>预测日期范围：</strong>2023-10-01 至 2023-10-31</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><strong>使用模型：</strong>ARIMA时间序列模型</p>
+                                                <p><strong>预测时间：</strong>2023-09-25 14:30:00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 销量趋势图 -->
+                                <div class="result-card">
+                                    <h3>
+                                        <i class="fas fa-chart-line"></i> 未来一个月销量趋势预测
+                                    </h3>
+                                    <div class="chart-wrapper">
+                                        <div class="chart-container">
+                                            <canvas id="salesTrendChart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 概率分布分析 -->
+                                <div class="result-card">
+                                    <h3>
+                                        <i class="fas fa-chart-area"></i> 预测销量概率分布
+                                    </h3>
+                                    <div class="chart-wrapper">
+                                        <div class="chart-container">
+                                            <canvas id="probabilityChart"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h4 class="h6 mb-3">置信区间分析</h4>
+                                        <div class="row g-3">
+                                            <div class="col-md-4">
+                                                <div class="bg-light p-3 rounded">
+                                                    <p class="text-sm text-muted mb-1">95% 置信区间下限</p>
+                                                    <p class="h5 font-weight-bold">11,800 升/日</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="bg-light p-3 rounded">
+                                                    <p class="text-sm text-muted mb-1">预测均值</p>
+                                                    <p class="h5 font-weight-bold">12,500 升/日</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="bg-light p-3 rounded">
+                                                    <p class="text-sm text-muted mb-1">95% 置信区间上限</p>
+                                                    <p class="h5 font-weight-bold">13,200 升/日</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 影响因素分析 -->
+                                <div class="result-card">
+                                    <h3>
+                                        <i class="fas fa-radar-chart"></i> 销量影响因素分析
+                                    </h3>
+                                    <div class="chart-wrapper">
+                                        <div class="chart-container">
+                                            <canvas id="factorsChart"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h4 class="h6 mb-3">关键影响因素</h4>
+                                        <ul class="list-group">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <span><i class="fas fa-temperature-high text-warning me-2"></i> 温度变化</span>
+                                                <span class="badge bg-primary">高影响</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <span><i class="fas fa-car text-info me-2"></i> 交通流量</span>
+                                                <span class="badge bg-primary">高影响</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <span><i class="fas fa-umbrella text-primary me-2"></i> 降雨量</span>
+                                                <span class="badge bg-secondary">中影响</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <span><i class="fas fa-calendar-check text-success me-2"></i> 节假日</span>
+                                                <span class="badge bg-secondary">中影响</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <span><i class="fas fa-dollar-sign text-danger me-2"></i> 油价变动</span>
+                                                <span class="badge bg-secondary">中影响</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <span><i class="fas fa-gift text-purple me-2"></i> 促销活动</span>
+                                                <span class="badge bg-success">低影响</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- 预测结果表格 -->
+                                <div class="result-card">
+                                    <h3>
+                                        <i class="fas fa-table"></i> 每日预测详情
+                                    </h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>日期</th>
+                                                    <th>预测销量（升）</th>
+                                                    <th>置信区间下限（升）</th>
+                                                    <th>置信区间上限（升）</th>
+                                                    <th>天气情况</th>
+                                                    <th>是否节假日</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- 示例数据 -->
+                                                <tr>
+                                                    <td>2023-10-01</td>
+                                                    <td>15,200</td>
+                                                    <td>14,500</td>
+                                                    <td>15,900</td>
+                                                    <td>晴，25℃</td>
+                                                    <td>是</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2023-10-02</td>
+                                                    <td>14,800</td>
+                                                    <td>14,100</td>
+                                                    <td>15,500</td>
+                                                    <td>晴，26℃</td>
+                                                    <td>是</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2023-10-03</td>
+                                                    <td>14,500</td>
+                                                    <td>13,800</td>
+                                                    <td>15,200</td>
+                                                    <td>多云，24℃</td>
+                                                    <td>是</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2023-10-04</td>
+                                                    <td>13,200</td>
+                                                    <td>12,500</td>
+                                                    <td>13,900</td>
+                                                    <td>阴，22℃</td>
+                                                    <td>否</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2023-10-05</td>
+                                                    <td>12,800</td>
+                                                    <td>12,100</td>
+                                                    <td>13,500</td>
+                                                    <td>阴，21℃</td>
+                                                    <td>否</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2023-10-06</td>
+                                                    <td>12,500</td>
+                                                    <td>11,800</td>
+                                                    <td>13,200</td>
+                                                    <td>晴，23℃</td>
+                                                    <td>否</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2023-10-07</td>
+                                                    <td>12,300</td>
+                                                    <td>11,600</td>
+                                                    <td>13,000</td>
+                                                    <td>晴，24℃</td>
+                                                    <td>否</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>...</td>
+                                                    <td>...</td>
+                                                    <td>...</td>
+                                                    <td>...</td>
+                                                    <td>...</td>
+                                                    <td>...</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="mt-3 text-center">
+                                        <button class="btn btn-outline-primary btn-sm">
+                                            <i class="fas fa-expand"></i> 查看完整数据
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- 分析报告 -->
+                                <div class="result-card">
+                                    <h3>
+                                        <i class="fas fa-file-alt"></i> 预测分析报告
+                                    </h3>
+                                    <div class="mb-4">
+                                        <h4 class="h6 mb-3">一、预测结果概述</h4>
+                                        <p>基于历史数据和相关影响因素，我们预测该加油站在2023年10月份的平均日销量为12,500升，月总销量约为375,000升。预测结果的95%置信区间为每日11,800升至13,200升。</p>
+                                    </div>
+                                    <div class="mb-4">
+                                        <h4 class="h6 mb-3">二、关键影响因素分析</h4>
+                                        <p>1. <strong>温度变化</strong>：温度对销量有显著影响，随着气温降低，燃油消耗可能会增加。</p>
+                                        <p>2. <strong>交通流量</strong>：周边交通流量是影响销量的重要因素，工作日和周末的销量差异明显。</p>
+                                        <p>3. <strong>节假日因素</strong>：节假日期间销量通常会显著增加，尤其是长假期间。</p>
+                                    </div>
+                                    <div class="mb-4">
+                                        <h4 class="h6 mb-3">三、建议与优化方案</h4>
+                                        <p>1. <strong>库存管理</strong>：根据预测结果，合理安排库存，确保节假日期间供应充足。</p>
+                                        <p>2. <strong>人员调度</strong>：在预测销量较高的日期，适当增加工作人员数量，提高服务效率。</p>
+                                        <p>3. <strong>促销策略</strong>：在预测销量较低的日期，可以考虑推出促销活动，吸引更多客户。</p>
+                                        <p>4. <strong>数据收集</strong>：继续收集和完善各类影响因素数据，提高未来预测的准确性。</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="h6 mb-3">四、预测准确性评估</h4>
+                                        <p>本次预测使用了ARIMA时间序列模型，模型的拟合优度为92%，预测准确性较高。建议在实际销售数据产生后，及时对比实际值与预测值，进一步优化模型参数。</p>
+                                    </div>
+                                </div>
+
+                                <!-- 操作按钮 -->
+                                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-4">
+                                    <button id="exportBtn" class="btn btn-primary btn-lg">
+                                        <i class="fas fa-download"></i> 导出结果
+                                    </button>
+                                    <button id="rePredictBtn" class="btn btn-secondary btn-lg">
+                                        <i class="fas fa-redo"></i> 重新预测
+                                    </button>
+                                    <button class="btn btn-outline-success btn-lg">
+                                        <i class="fas fa-save"></i> 保存到历史记录
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer bg-dark text-white py-6">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="h5 mb-3">加油站销量预测系统</h3>
+                    <p class="text-muted">基于大数据和人工智能技术，为您提供准确的加油站销量预测和数据分析服务</p>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="h5 mb-3">快速链接</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="forecast_index.html" class="text-muted text-decoration-none"><i class="fas fa-home me-2"></i> 首页</a></li>
+                        <li><a href="forecast_input.html" class="text-muted text-decoration-none"><i class="fas fa-upload me-2"></i> 数据输入</a></li>
+                        <li><a href="forecast_result.html" class="text-muted text-decoration-none"><i class="fas fa-chart-line me-2"></i> 预测结果</a></li>
+                        <li><a href="forecast_history.html" class="text-muted text-decoration-none"><i class="fas fa-history me-2"></i> 历史记录</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="h5 mb-3">联系我们</h3>
+                    <ul class="list-unstyled">
+                        <li class="text-muted"><i class="fas fa-envelope me-2"></i> contact@forecast-system.com</li>
+                        <li class="text-muted"><i class="fas fa-phone me-2"></i> 400-123-4567</li>
+                        <li class="text-muted"><i class="fas fa-map-marker-alt me-2"></i> 北京市朝阳区科技园</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-gray-700 mt-6 pt-6 text-center text-muted">
+                <p>&copy; 2023 加油站销量预测系统. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/forecast_main.js"></script>
+</body>
+</html>

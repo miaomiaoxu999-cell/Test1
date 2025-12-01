@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>300天日语学习计划 - 首页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🎌 日语学习计划</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="active">首页</a>
+                <a href="calendar.html">课程日历</a>
+                <a href="stats.html">学习统计</a>
+                <a href="settings.html">设置</a>
+            </nav>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 移动端侧边菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav>
+            <a href="index.html" class="active">首页</a>
+            <a href="calendar.html">课程日历</a>
+            <a href="stats.html">学习统计</a>
+            <a href="settings.html">设置</a>
+        </nav>
+    </div>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- 英雄区 -->
+        <section class="hero">
+            <div class="container">
+                <h2>欢迎来到 <span class="highlight">300天日语学习计划</span>！</h2>
+                <p>每天15-20分钟，让你笑着把日语学会！</p>
+                <a href="day_0.html" class="btn-primary">开始学习 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <!-- 今日课程预览 -->
+        <section class="today-lesson">
+            <div class="container">
+                <h3><i class="fas fa-calendar-day"></i> 今日课程</h3>
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">第1天</span>
+                        <h4>🛫 旅行场景Day 1 - 在机场与车站的基本日语①</h4>
+                    </div>
+                    <div class="lesson-preview">
+                        <p>学习机场入境和车站问路的实用日语，掌握必备的旅行会话能力！</p>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="day_1.html" class="btn-secondary">继续学习 <i class="fas fa-play-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 学习进度 -->
+        <section class="progress-section">
+            <div class="container">
+                <h3><i class="fas fa-chart-line"></i> 学习进度</h3>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0.33%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span>已完成：1/300 天</span>
+                        <span>完成率：0.33%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 学习特色 -->
+        <section class="features">
+            <div class="container">
+                <h3><i class="fas fa-star"></i> 学习特色</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-laugh-beam"></i>
+                        </div>
+                        <h4>幽默教学</h4>
+                        <p>枯燥的语法将变成脱口秀般的有趣体验</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <h4>图文并茂</h4>
+                        <p>使用emoji和小剧场让学习更直观</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h4>实用性强</h4>
+                        <p>专注于旅行、餐饮、健身等真实场景</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>短时高效</h4>
+                        <p>每天只需15-20分钟，轻松坚持</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 学习路径 -->
+        <section class="learning-path">
+            <div class="container">
+                <h3><i class="fas fa-road"></i> 学习路径</h3>
+                <div class="path-steps">
+                    <div class="path-step active">
+                        <div class="step-number">1</div>
+                        <h4>基础巩固</h4>
+                        <p>第1-60天：生活会话基础</p>
+                    </div>
+                    <div class="path-step">
+                        <div class="step-number">2</div>
+                        <h4>深入日常</h4>
+                        <p>第61-140天：日常对话能力提升</p>
+                    </div>
+                    <div class="path-step">
+                        <div class="step-number">3</div>
+                        <h4>职场扩展</h4>
+                        <p>第141-220天：职场场景与会话</p>
+                    </div>
+                    <div class="path-step">
+                        <div class="step-number">4</div>
+                        <h4>流畅表达</h4>
+                        <p>第221-300天：文化融入与表达</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>300天日语学习计划</h4>
+                    <p>每天15-20分钟，让你笑着把日语学会！</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">使用指南</a>
+                    <a href="#">常见问题</a>
+                    <a href="#">联系我们</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 日语学习计划. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,932 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', 'Hiragino Sans GB', 'PingFang SC', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+
+/* 容器 */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 导航栏 */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #e63946;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #e63946;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* 移动端侧边菜单 */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1100;
+    padding: 60px 20px 20px;
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.mobile-menu nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mobile-menu nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-menu nav a:hover, .mobile-menu nav a.active {
+    color: #e63946;
+}
+
+/* 英雄区 */
+.hero {
+    background: linear-gradient(135deg, #e63946 0%, #f1faee 100%);
+    padding: 80px 0;
+    text-align: center;
+    color: #333;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero h2 .highlight {
+    color: #e63946;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* 按钮样式 */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #c1121f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #457b9d;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #1d3557;
+    transform: translateY(-2px);
+}
+
+/* 今日课程预览 */
+.today-lesson {
+    padding: 60px 0;
+}
+
+.today-lesson h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #1d3557;
+}
+
+.lesson-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.lesson-card:hover {
+    transform: translateY(-5px);
+}
+
+.lesson-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f1faee;
+    border-bottom: 2px solid #a8dadc;
+}
+
+.lesson-number {
+    background-color: #e63946;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.lesson-header h4 {
+    font-size: 1.3rem;
+    color: #1d3557;
+}
+
+.lesson-preview {
+    padding: 20px;
+}
+
+.lesson-actions {
+    padding: 0 20px 20px;
+    text-align: right;
+}
+
+/* 学习进度 */
+.progress-section {
+    padding: 60px 0;
+    background-color: #f1faee;
+}
+
+.progress-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #1d3557;
+}
+
+.progress-container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #457b9d, #1d3557);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.progress-stats {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: #1d3557;
+}
+
+/* 学习特色 */
+.features {
+    padding: 60px 0;
+}
+
+.features h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #1d3557;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #e63946;
+    margin-bottom: 20px;
+}
+
+.feature-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #1d3557;
+}
+
+/* 学习路径 */
+.learning-path {
+    padding: 60px 0;
+    background-color: #f1faee;
+}
+
+.learning-path h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #1d3557;
+    text-align: center;
+}
+
+.path-steps {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.path-step {
+    flex: 1;
+    min-width: 200px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.path-step.active {
+    background-color: #e63946;
+    color: white;
+}
+
+.path-step:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #a8dadc;
+    color: #1d3557;
+    border-radius: 50%;
+    line-height: 40px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.path-step.active .step-number {
+    background-color: #f1faee;
+    color: #e63946;
+}
+
+.path-step h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* 课程页面样式 */
+.lesson-header-section {
+    background-color: #1d3557;
+    color: white;
+    padding: 30px 0;
+}
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.back-link, .next-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover, .next-link:hover {
+    color: #a8dadc;
+}
+
+.lesson-number {
+    background-color: #e63946;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.lesson-content {
+    padding: 40px 0;
+}
+
+.lesson-section {
+    margin-bottom: 40px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.lesson-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #1d3557;
+    border-bottom: 2px solid #a8dadc;
+    padding-bottom: 10px;
+}
+
+/* 角色对话框 */
+.character-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: #f1faee;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.character-icon {
+    font-size: 3rem;
+    color: #457b9d;
+}
+
+.character-dialogue {
+    flex: 1;
+}
+
+.character-dialogue p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* 复习容器 */
+.review-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.review-item {
+    background-color: #f1faee;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.review-item:hover {
+    transform: translateY(-3px);
+}
+
+.japanese-phrase {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1d3557;
+    margin-bottom: 10px;
+}
+
+.phrase-pronunciation {
+    font-size: 1.1rem;
+    color: #457b9d;
+    margin-bottom: 10px;
+}
+
+.phrase-meaning {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.audio-btn {
+    background-color: #457b9d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.audio-btn:hover {
+    background-color: #1d3557;
+}
+
+/* 对话框 */
+.conversation-box {
+    background-color: #f1faee;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.conversation-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #1d3557;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #a8dadc;
+    padding-bottom: 10px;
+}
+
+.dialogue {
+    margin-bottom: 15px;
+}
+
+.dialogue-speaker {
+    font-weight: bold;
+    color: #457b9d;
+    margin-bottom: 5px;
+}
+
+.dialogue-text {
+    font-size: 1.1rem;
+    color: #1d3557;
+    margin-bottom: 5px;
+}
+
+.dialogue-translation {
+    color: #666;
+    font-style: italic;
+}
+
+/* 词汇表 */
+.vocabulary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.vocab-card {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #e63946;
+    transition: transform 0.3s ease;
+}
+
+.vocab-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.vocab-japanese {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #1d3557;
+    margin-bottom: 5px;
+}
+
+.vocab-pronunciation {
+    color: #457b9d;
+    margin-bottom: 10px;
+}
+
+.vocab-meaning {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.vocab-example {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* 语法说明 */
+.grammar-container {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.grammar-item {
+    margin-bottom: 25px;
+}
+
+.grammar-item:last-child {
+    margin-bottom: 0;
+}
+
+.grammar-item h4 {
+    font-size: 1.2rem;
+    color: #1d3557;
+    margin-bottom: 10px;
+}
+
+.grammar-example {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.grammar-example p {
+    margin-bottom: 5px;
+    color: #457b9d;
+}
+
+/* 练习题 */
+.quiz-container {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.quiz-item {
+    margin-bottom: 30px;
+}
+
+.quiz-item:last-child {
+    margin-bottom: 0;
+}
+
+.quiz-question {
+    margin-bottom: 15px;
+}
+
+.question-number {
+    font-weight: bold;
+    color: #e63946;
+    margin-right: 10px;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option {
+    background-color: #fff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.option:hover {
+    background-color: #f1faee;
+}
+
+.option input {
+    margin-right: 10px;
+}
+
+.fill-blank {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.fill-blank:focus {
+    outline: none;
+    border-color: #457b9d;
+}
+
+.quiz-feedback {
+    margin-top: 10px;
+    font-weight: 500;
+    min-height: 20px;
+}
+
+.quiz-controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* 角色扮演 */
+.roleplay-container {
+    background-color: #f1faee;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.roleplay-container h4 {
+    font-size: 1.2rem;
+    color: #1d3557;
+    margin-bottom: 20px;
+}
+
+.roleplay-dialogue {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #457b9d;
+}
+
+.roleplay-role {
+    font-weight: bold;
+    color: #457b9d;
+    margin-bottom: 5px;
+}
+
+.roleplay-line {
+    font-size: 1.1rem;
+    color: #1d3557;
+    margin-bottom: 5px;
+}
+
+.roleplay-instruction {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* 提示框 */
+.tips-box {
+    background-color: #e63946;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.tips-box h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.tips-box p {
+    margin-bottom: 10px;
+}
+
+.lesson-completion {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* 次日预告 */
+.next-lesson-preview {
+    background-color: #457b9d;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.next-lesson-preview h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.next-lesson-preview p {
+    margin-bottom: 10px;
+}
+
+/* 答案解析 */
+.answer-container {
+    background-color: #f1faee;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.answer-item {
+    margin-bottom: 20px;
+}
+
+.answer-item:last-child {
+    margin-bottom: 0;
+}
+
+.answer-item h4 {
+    font-size: 1.1rem;
+    color: #1d3557;
+    margin-bottom: 10px;
+}
+
+.answer-item ul {
+    padding-left: 20px;
+}
+
+.answer-item li {
+    margin-bottom: 5px;
+}
+
+/* 页脚 */
+.footer {
+    background-color: #1d3557;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-info h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #a8dadc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #457b9d;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .path-steps {
+        flex-direction: column;
+    }
+    
+    .path-step {
+        min-width: 100%;
+    }
+    
+    .vocabulary-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .quiz-controls {
+        flex-direction: column;
+    }
+    
+    .lesson-navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .character-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .character-icon {
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .lesson-section {
+        padding: 20px;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+}

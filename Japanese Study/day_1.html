@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第1天 - 旅行场景_机场与车站 | 300天日语学习计划</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🎌 日语学习计划</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="calendar.html">课程日历</a>
+                <a href="stats.html">学习统计</a>
+                <a href="settings.html">设置</a>
+            </nav>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 移动端侧边菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav>
+            <a href="index.html">首页</a>
+            <a href="calendar.html">课程日历</a>
+            <a href="stats.html">学习统计</a>
+            <a href="settings.html">设置</a>
+        </nav>
+    </div>
+
+    <!-- 课程标题 -->
+    <section class="lesson-header-section">
+        <div class="container">
+            <div class="lesson-navigation">
+                <a href="day_0.html" class="back-link"><i class="fas fa-arrow-left"></i> 上一天</a>
+                <span class="lesson-number">第1天</span>
+                <a href="index.html" class="next-link">返回首页 <i class="fas fa-home"></i></a>
+            </div>
+            <h2>🛫 第1天：旅行场景 - 在机场与车站的基本日语①</h2>
+            <p class="lesson-description">学习如何在日本机场和车站进行基本交流，掌握必备的旅行会话！</p>
+        </div>
+    </section>
+
+    <!-- 主要内容 -->
+    <main class="lesson-content">
+        <div class="container">
+            <!-- 开场 -->
+            <section class="lesson-intro">
+                <div class="character-box">
+                    <div class="character-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <div class="character-dialogue">
+                        <p>🌟 大家好！欢迎来到第1天的学习！今天我们将踏上日语旅行的第一站！</p>
+                        <p>想象一下，你终于踏上了期待已久的日本之旅，却在机场或车站遇到了语言障碍...😱</p>
+                        <p>别担心！今天我们要学习的正是如何在机场和车站进行基本的日语交流！这些实用短语将帮助你顺利开始日本之行！🌏</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 每日复习 -->
+            <section class="lesson-section">
+                <h3><i class="fas fa-redo-alt"></i> 每日复习</h3>
+                <div class="review-container">
+                    <div class="review-item">
+                        <div class="japanese-phrase">こんにちは</div>
+                        <div class="phrase-pronunciation">Konnichiwa</div>
+                        <div class="phrase-meaning">你好</div>
+                        <button class="audio-btn" onclick="playAudio('konnichiwa')"><i class="fas fa-volume-up"></i> 发音</button>
+                    </div>
+                    <div class="review-item">
+                        <div class="japanese-phrase">ありがとう</div>
+                        <div class="phrase-pronunciation">Arigatou</div>
+                        <div class="phrase-meaning">谢谢</div>
+                        <button class="audio-btn" onclick="playAudio('arigatou')"><i class="fas fa-volume-up"></i> 发音</button>
+                    </div>
+                    <div class="review-item">
+                        <div class="japanese-phrase">お願いします</div>
+                        <div class="phrase-pronunciation">Onegaishimasu</div>
+                        <div class="phrase-meaning">请</div>
+                        <button class="audio-btn" onclick="playAudio('onegaishimasu')"><i class="fas fa-volume-up"></i> 发音</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 机场情境对话 -->
+            <section class="lesson-section">
+                <h3><i class="fas fa-conversation"></i> 机场情境对话</h3>
+                <div class="conversation-box">
+                    <div class="conversation-title">✈️ 入境检查</div>
+                    <div class="dialogue">
+                        <div class="dialogue-speaker">海关官员：</div>
+                        <div class="dialogue-text">お名前は何ですか？</div>
+                        <div class="dialogue-translation">您叫什么名字？</div>
+                    </div>
+                    <div class="dialogue">
+                        <div class="dialogue-speaker">旅行者：</div>
+                        <div class="dialogue-text">私は[名字]です。</div>
+                        <div class="dialogue-translation">我是[名字]。</div>
+                    </div>
+                    <div class="dialogue">
+                        <div class="dialogue-speaker">海关官员：</div>
+                        <div class="dialogue-text">日本に来た目的は何ですか？</div>
+                        <div class="dialogue-translation">来日本的目的是什么？</div>
+                    </div>
+                    <div class="dialogue">
+                        <div class="dialogue-speaker">旅行者：</div>
+                        <div class="dialogue-text">観光です。</div>
+                        <div class="dialogue-translation">观光旅游。</div>
+                    </div>
+                    <div class="dialogue">
+                        <div class="dialogue-speaker">海关官员：</div>
+                        <div class="dialogue-text">何日間滞在しますか？</div>
+                        <div class="dialogue-translation">将停留多少天？</div>
+                    </div>
+                    <div class="dialogue">
+                        <div class="dialogue-speaker">旅行者：</div>
+                        <div class="dialogue-text">七日間滞在します。</div>
+                        <div class="dialogue-translation">将停留七天。</div>
+                    </div>
+                </div>
+
+                <!-- 车站情境对话 -->
+                <div class="conversation-box">
+                    <div class="conversation-title">🚄 车站问路</div>
+                    <div class="dialogue">
+                        <div class="dialogue-speaker">旅行者：</div>
+                        <div class="dialogue-text">すみません、新宿はどこですか？</div>
+                        <div class="dialogue-translation">对不起，新宿在哪里？</div>
+                    </div>
+                    <div class="dialogue">
+                        <div class="dialogue-speaker">工作人员：</div>
+                        <div class="dialogue-text">あちらのホームです。この階段を上がってください。</div>
+                        <div class="dialogue-translation">在那边的站台。请上这个楼梯。</div>
+                    </div>
+                    <div class="dialogue">
+                        <div class="dialogue-speaker">旅行者：</div>
+                        <div class="dialogue-text">どうもありがとうございます。</div>
+                        <div class="dialogue-translation">非常感谢。</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 词汇表 -->
+            <section class="lesson-section">
+                <h3><i class="fas fa-book"></i> 今日词汇表</h3>
+                <div class="vocabulary-grid">
+                    <div class="vocab-card">
+                        <div class="vocab-japanese">お名前 (おなまえ)</div>
+                        <div class="vocab-pronunciation">Onamae</div>
+                        <div class="vocab-meaning">名字</div>
+                        <div class="vocab-example">あなたのお名前は何ですか？ - 你叫什么名字？</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-japanese">目的 (もくてき)</div>
+                        <div class="vocab-pronunciation">Mokuteki</div>
+                        <div class="vocab-meaning">目的</div>
+                        <div class="vocab-example">旅行の目的は観光です - 旅行的目的是观光</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-japanese">観光 (かんこう)</div>
+                        <div class="vocab-pronunciation">Kankou</div>
+                        <div class="vocab-meaning">观光</div>
+                        <div class="vocab-example">日本は観光にいい所です - 日本是观光的好地方</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-japanese">滞在 (たいざい)</div>
+                        <div class="vocab-pronunciation">Taizai</div>
+                        <div class="vocab-meaning">停留</div>
+                        <div class="vocab-example">東京に三日間滞在します - 将在东京停留三天</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-japanese">ホーム</div>
+                        <div class="vocab-pronunciation">Ho-mu</div>
+                        <div class="vocab-meaning">站台</div>
+                        <div class="vocab-example">ホームにお越しください - 请到站台来</div>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-japanese">階段 (かいだん)</div>
+                        <div class="vocab-pronunciation">Kaidan</div>
+                        <div class="vocab-meaning">楼梯</div>
+                        <div class="vocab-example">階段を上がってください - 请上楼梯</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 语法说明 -->
+            <section class="lesson-section">
+                <h3><i class="fas fa-code"></i> 今日语法：「です」和「ます」</h3>
+                <div class="grammar-container">
+                    <div class="grammar-item">
+                        <h4>1. です (Desu)</h4>
+                        <p>「です」是日语中的判断助动词，相当于中文的「是」，用于陈述句末尾。</p>
+                        <div class="grammar-example">
+                            <p>私は中国人です。 - 我是中国人。</p>
+                            <p>これは本です。 - 这是书。</p>
+                        </div>
+                    </div>
+                    <div class="grammar-item">
+                        <h4>2. ます (Masu)</h4>
+                        <p>「ます」是日语中动词的礼貌体后缀，用于表示动作。</p>
+                        <div class="grammar-example">
+                            <p>私は勉強します。 - 我学习。</p>
+                            <p>彼は食べます。 - 他吃。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 练习题 -->
+            <section class="lesson-section">
+                <h3><i class="fas fa-pencil-alt"></i> 练习题</h3>
+                <div class="quiz-container">
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <span class="question-number">1.</span>
+                            <p>请将「我是旅行者」翻译成日语：</p>
+                            <input type="text" id="day1-q1" class="fill-blank" placeholder="请输入答案...">
+                        </div>
+                        <div class="quiz-feedback" id="day1-feedback-q1"></div>
+                    </div>
+                    <div class="quiz-item">
+                        <div class="quiz-question">
+                            <span class="question-number">2.</span>
+                            <p>请将「我将在日本停留五天」翻译成日语：</p>
+                            <input type="text" id="day1-q2" class="fill-blank" placeholder="请输入答案...">
+                        </div>
+                        <div class="quiz-feedback" id="day1-feedback-q2"></div>
+                    </div>
+                    <div class="quiz-controls">
+                        <button class="btn-secondary" onclick="checkDay1Answers()">检查答案</button>
+                        <button class="btn-secondary" onclick="resetDay1Quiz()">重置</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 角色扮演 -->
+            <section class="lesson-section">
+                <h3><i class="fas fa-masks-theater"></i> 角色扮演</h3>
+                <div class="roleplay-container">
+                    <h4>🎯 场景：在机场入境</h4>
+                    <p>请和朋友一起练习以下对话，一人扮演海关官员，一人扮演旅行者。</p>
+                    <div class="roleplay-dialogue">
+                        <div class="roleplay-role">海关官员：</div>
+                        <div class="roleplay-line">お名前は何ですか？</div>
+                        <div class="roleplay-instruction">（问对方的名字）</div>
+                    </div>
+                    <div class="roleplay-dialogue">
+                        <div class="roleplay-role">旅行者：</div>
+                        <div class="roleplay-line">私は[你的名字]です。</div>
+                        <div class="roleplay-instruction">（用自己的名字回答）</div>
+                    </div>
+                    <div class="roleplay-dialogue">
+                        <div class="roleplay-role">海关官员：</div>
+                        <div class="roleplay-line">日本に来た目的は何ですか？</div>
+                        <div class="roleplay-instruction">（问对方来日本的目的）</div>
+                    </div>
+                    <div class="roleplay-dialogue">
+                        <div class="roleplay-role">旅行者：</div>
+                        <div class="roleplay-line">観光です。</div>
+                        <div class="roleplay-instruction">（回答观光旅游）</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 学习提示 -->
+            <section class="lesson-section">
+                <div class="tips-box">
+                    <h4><i class="fas fa-lightbulb"></i> 学习提示</h4>
+                    <p>✅ 机场和车站是旅行的重要环节，掌握这些基础对话能让你的日本之行更加顺畅！</p>
+                    <p>✅ 记住「です」和「ます」的用法，这是日语礼貌体的基础！</p>
+                    <p>✅ 试着每天练习今天学到的对话，直到能够脱口而出！</p>
+                    <div class="lesson-completion">
+                        <button class="btn-primary" onclick="completeLesson(1)">标记为完成 <i class="fas fa-check"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 次日预告 -->
+            <section class="lesson-section">
+                <div class="next-lesson-preview">
+                    <h4><i class="fas fa-calendar-day"></i> 次日预告</h4>
+                    <p>🎒 第2天：旅行场景Day 2 - 在酒店的基本日语</p>
+                    <p>明天我们将学习如何在日本的酒店办理入住、点餐和请求服务等实用日语！</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>300天日语学习计划</h4>
+                    <p>每天15-20分钟，让你笑着把日语学会！</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">使用指南</a>
+                    <a href="#">常见问题</a>
+                    <a href="#">联系我们</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 日语学习计划. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
